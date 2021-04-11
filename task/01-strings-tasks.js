@@ -222,7 +222,26 @@ function getRectangleString(width, height) {
  *
  */
 function encodeToRot13(str) {
-  throw new Error("Not implemented");
+  const upperCaseCharacters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const lowerCaseCharacters =
+    "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz";
+  let resultString = "";
+  for (let i = 0; i < str.length; i++) {
+    let currentChar = str[i];
+    let charPosition = upperCaseCharacters.indexOf(currentChar);
+    if (charPosition !== -1) {
+      resultString += upperCaseCharacters.charAt(charPosition + 13);
+      continue;
+    }
+    charPosition = lowerCaseCharacters.indexOf(currentChar);
+    if (charPosition !== -1) {
+      resultString += lowerCaseCharacters.charAt(charPosition + 13);
+      continue;
+    }
+    resultString += currentChar;
+  }
+  return resultString;
 }
 
 /**
