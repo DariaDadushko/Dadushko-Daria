@@ -53,7 +53,7 @@ function getCicleCircumference(radius) {
  */
 function getAverage(value1, value2) {
   return (BigInt(value1) + BigInt(value2)) / BigInt(2);
-} //AB = √(xb - xa)2 + (yb - ya)2
+}
 
 /**
  * Returns a distance beetween two points by cartesian coordinates.
@@ -87,7 +87,7 @@ function getDistanceBetweenPoints(x1, y1, x2, y2) {
  *   5*x = 0         => 0
  */
 function getLinearEquationRoot(a, b) {
-  return (0 - b) / a;
+  return -b / a;
 }
 
 /**
@@ -109,6 +109,7 @@ function getLinearEquationRoot(a, b) {
  */
 function getAngleBetweenVectors(x1, y1, x2, y2) {
   throw new Error("Not implemented");
+  // у меня плохо с тригонометрией
 }
 
 /**
@@ -124,7 +125,7 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
  *     0     => 0
  */
 function getLastDigit(value) {
-  throw new Error("Not implemented");
+  return value % 10;
 }
 
 /**
